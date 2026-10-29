@@ -1,0 +1,21 @@
+.wh-hero {
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+.wh-hero__inner { max-width: 700px; margin: 0 auto; }
+.wh-hero__title { font-size: 2.5rem; margin-bottom: 12px; }
+.wh-hero__subtitle { font-size: 1.1rem; opacity: .85; margin-bottom: 24px; }
+.wh-hero__btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #ff5a1f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.wh-hero__btn:hover { background: #e04d15; }

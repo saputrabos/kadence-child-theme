@@ -1,0 +1,73 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/hero-banner",
+  "version": "1.0.0",
+  "title": "Kadence Hero Banner",
+  "category": "design",
+  "icon": "cover-image",
+  "description": "A full-width hero banner with background image, calls to action, and achievement cards.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Pondok Pesantren An-Nur II Al-Murtadlo"
+    },
+    "description": {
+      "type": "string",
+      "default": "Merupakan pesantren salaf modern bernuansa wisata dengan visi tercetaknya putra-putri kader ulama' intelektual & berhaluan Ahlussunnah Wal Jama'ah."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Daftar Sekarang Disini!"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#daftar"
+    },
+    "videoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "achievementOneTitle": {
+      "type": "string",
+      "default": "MURI"
+    },
+    "achievementOneText": {
+      "type": "string",
+      "default": "Rekor Muri 2020"
+    },
+    "achievementTwoTitle": {
+      "type": "string",
+      "default": "2019"
+    },
+    "achievementTwoText": {
+      "type": "string",
+      "default": "Penghargaan Pesantren Modern Inspiratif"
+    },
+    "achievementThreeTitle": {
+      "type": "string",
+      "default": "2024"
+    },
+    "achievementThreeText": {
+      "type": "string",
+      "default": "Penghargaan One Pesantren One Product"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

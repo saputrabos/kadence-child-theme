@@ -20,3 +20,9 @@ function kadence_child_enqueue_assets() {
         wp_get_theme()->get('Version')
     );
 }
+
+add_action('init', 'kadence_child_register_hero_block');
+
+function kadence_child_register_hero_block() {
+    register_block_type(__DIR__ . '/blocks/hero-banner');
+}
