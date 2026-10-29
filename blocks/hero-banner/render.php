@@ -123,7 +123,7 @@ $video_dialog_id = wp_unique_id('kadence-hero-video-');
                 <?php elseif ($award_image) : ?>
                     <img class="kadence-hero__award-image" src="<?php echo esc_url($award_image); ?>" alt="" loading="lazy" decoding="async">
                 <?php endif; ?>
-                <span class="kadence-hero__award-title" style="<?php echo esc_attr($award_style); ?>"><?php echo esc_html($award_title); ?></span>
+                <span class="kadence-hero__award-title" style="<?php echo esc_attr($award_style); ?>"><?php echo nl2br(esc_html($award_title)); ?></span>
                 <?php if ($award_url) : ?>
                     <span class="kadence-hero__card-action" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false"><path d="m9 5 7 7-7 7"/></svg>
@@ -151,10 +151,10 @@ $video_dialog_id = wp_unique_id('kadence-hero-video-');
                         </span>
                     <?php endif; ?>
                     <?php if ($stat['title']) : ?>
-                        <strong class="kadence-hero__stat-title" style="<?php echo esc_attr($stat_title_style); ?>"><?php echo esc_html($stat['title']); ?></strong>
+                        <strong class="kadence-hero__stat-title" style="<?php echo esc_attr($stat_title_style); ?>"><?php echo nl2br(esc_html($stat['title'])); ?></strong>
                     <?php endif; ?>
                     <?php if ($stat['text']) : ?>
-                        <span class="kadence-hero__stat-text" style="<?php echo esc_attr($stat_text_style); ?>"><?php echo esc_html($stat['text']); ?></span>
+                        <span class="kadence-hero__stat-text" style="<?php echo esc_attr($stat_text_style); ?>"><?php echo nl2br(esc_html($stat['text'])); ?></span>
                     <?php endif; ?>
                 <?php if ($stat['url']) : ?>
                     </a>
@@ -167,16 +167,16 @@ $video_dialog_id = wp_unique_id('kadence-hero-video-');
 
     <div class="kadence-hero__copy">
         <?php if ($heading) : ?>
-            <h1 class="kadence-hero__heading" style="<?php echo esc_attr($heading_style); ?>"><?php echo esc_html($heading); ?></h1>
+            <h1 class="kadence-hero__heading" style="<?php echo esc_attr($heading_style); ?>"><?php echo nl2br(esc_html($heading)); ?></h1>
         <?php endif; ?>
         <?php if ($description) : ?>
-            <p class="kadence-hero__description" style="<?php echo esc_attr($description_style); ?>"><?php echo esc_html($description); ?></p>
+            <p class="kadence-hero__description" style="<?php echo esc_attr($description_style); ?>"><?php echo nl2br(esc_html($description)); ?></p>
         <?php endif; ?>
     </div>
     <div class="kadence-hero__shape" aria-hidden="true"></div>
     <div class="kadence-hero__actions">
         <?php if ($button_text && $button_url) : ?>
-            <a class="kadence-hero__button" href="<?php echo esc_url($button_url); ?>" style="<?php echo esc_attr($button_style); ?>"><?php echo esc_html($button_text); ?></a>
+            <a class="kadence-hero__button" href="<?php echo esc_url($button_url); ?>" style="<?php echo esc_attr($button_style); ?>"><?php echo nl2br(esc_html($button_text)); ?></a>
         <?php endif; ?>
         <?php if ($video_url) : ?>
             <a

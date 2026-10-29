@@ -1,5 +1,5 @@
 .annur-articles {
-    --annur-articles-blue: #087baa;
+    --annur-articles-blue: #3057a7;
     --annur-articles-ink: #171d25;
     --annur-articles-muted: #69798a;
     box-sizing: border-box;
@@ -17,9 +17,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    min-height: 130px;
     margin-bottom: 22px;
-    padding: 26px clamp(24px, 4vw, 60px);
+    padding: 35px 40px;
     border: 1px solid #d9dce0;
     border-radius: 20px;
     background: #fff;
@@ -28,11 +27,11 @@
 .annur-articles__heading {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 14px;
     margin: 0;
     color: var(--annur-articles-ink);
-    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
     line-height: 1.3;
 }
 
@@ -45,80 +44,77 @@
 }
 
 .annur-articles__next {
-    display: inline-flex;
-    flex: 0 0 104px;
-    align-items: center;
-    justify-content: center;
-    width: 104px;
-    height: 58px;
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     border: 0;
-    border-radius: 6px;
-    background: var(--annur-articles-blue);
-    color: #fff;
+    border-radius: 0;
+    background: transparent;
     cursor: pointer;
-    transition: background-color 160ms ease;
+    line-height: 0;
+    transition: opacity 160ms ease;
 }
 
 .annur-articles__next:hover,
 .annur-articles__next:focus-visible {
-    background: #06658f;
+    opacity: 0.8;
 }
 
-.annur-articles__next span {
-    display: grid;
-    width: 29px;
-    height: 29px;
-    border-radius: 50%;
-    background: #315da8;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1;
-    place-items: center;
+.annur-articles__next img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
 .annur-articles__track {
     display: flex;
-    gap: 28px;
+    gap: 24px;
     overflow-x: auto;
-    padding: 0 0 12px;
+    padding: 12px 0 10px;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-color: #315da8 #e7e9ec;
+    scrollbar-color: #3057a7 #e9ecef;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
 }
 
 .annur-articles__track::-webkit-scrollbar {
-    height: 6px;
+    height: 4px;
 }
 
 .annur-articles__track::-webkit-scrollbar-track {
-    border-radius: 999px;
-    background: #e7e9ec;
+    border-radius: 10px;
+    background: #e9ecef;
 }
 
 .annur-articles__track::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: #315da8;
+    border-radius: 10px;
+    background: #3057a7;
 }
 
 .annur-articles__card {
     display: flex;
-    flex: 0 0 calc((100% - 56px) / 3);
-    min-width: 290px;
+    flex: 0 0 calc(33.333% - 16px);
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid #e0e5ea;
-    border-radius: 26px;
-    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    background: transparent;
     scroll-snap-align: start;
+    transition: transform 300ms ease, border-color 300ms ease;
+}
+
+.annur-articles__card:hover {
+    transform: translateY(-4px);
+    border-color: #dee2e6;
 }
 
 .annur-articles__image-link {
     display: block;
-    height: 275px;
+    height: 220px;
     overflow: hidden;
     background: #eef1f4;
 }
@@ -128,11 +124,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 220ms ease;
+    transition: transform 400ms ease;
 }
 
 .annur-articles__card:hover .annur-articles__image {
-    transform: scale(1.025);
+    transform: scale(1.03);
 }
 
 .annur-articles__image--placeholder {
@@ -140,36 +136,33 @@
 }
 
 .annur-articles__content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    min-height: 232px;
-    padding: 30px;
+    padding: 24px;
 }
 
 .annur-articles__category {
-    align-self: flex-start;
+    display: inline-flex;
     max-width: 100%;
-    margin-bottom: 18px;
-    padding: 8px 15px;
+    margin-bottom: 14px;
+    padding: 6px 12px;
     overflow: hidden;
-    border: 1px solid #e5e9ed;
+    border: 1px solid #e9ecef;
     border-radius: 999px;
-    color: #78889a;
-    font-size: 0.62rem;
-    font-weight: 500;
-    line-height: 1.2;
+    background: #f8f9fa;
+    color: #6c757d;
+    font-size: 7px;
+    line-height: 1.4;
     text-overflow: ellipsis;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
 .annur-articles__title {
-    margin: 0 0 22px;
-    color: var(--annur-articles-ink);
-    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-    font-weight: 650;
-    line-height: 1.35;
+    display: block;
+    margin: 0 0 18px;
+    color: #212529;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .annur-articles__title a {
@@ -187,20 +180,20 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-top: auto;
-    color: var(--annur-articles-muted);
-    font-size: 0.72rem;
+    color: #868e96;
+    font-size: 9px;
     line-height: 1.4;
 }
 
 .annur-articles__byline {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0;
 }
 
 .annur-articles__author {
-    color: #18395d;
+    margin-left: 6px;
+    color: #495057;
     font-weight: 600;
 }
 
@@ -208,8 +201,10 @@
     display: inline-flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 7px;
-    color: var(--annur-articles-muted);
+    gap: 6px;
+    margin-left: auto;
+    color: #868e96;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -231,18 +226,10 @@
     text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .annur-articles__card {
-        flex-basis: calc((100% - 28px) / 2);
-    }
-
-    .annur-articles__image-link {
-        height: 230px;
-    }
-
-    .annur-articles__content {
-        min-height: 220px;
-        padding: 24px;
+        flex-basis: 80%;
+        min-width: 0;
     }
 }
 
@@ -255,28 +242,9 @@
     }
 
     .annur-articles__next {
-        flex-basis: 62px;
-        width: 62px;
-        height: 48px;
-    }
-
-    .annur-articles__track {
-        gap: 16px;
-    }
-
-    .annur-articles__card {
-        flex-basis: min(86%, 390px);
-        min-width: 0;
-        border-radius: 20px;
-    }
-
-    .annur-articles__image-link {
-        height: 220px;
-    }
-
-    .annur-articles__content {
-        min-height: 210px;
-        padding: 22px;
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -286,6 +254,10 @@
     }
 
     .annur-articles__image {
+        transition: none;
+    }
+
+    .annur-articles__card {
         transition: none;
     }
 }

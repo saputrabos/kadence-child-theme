@@ -2,10 +2,10 @@
   "apiVersion": 3,
   "name": "kadence-child/hero-banner",
   "version": "1.0.0",
-  "title": "Kadence Hero Banner",
+  "title": "An-Nur Hero Banner",
   "category": "kadence-child",
   "icon": "cover-image",
-  "description": "A full-width hero banner with background image, calls to action, and achievement cards.",
+  "description": "Banner utama yang menampilkan iconic AN-NUR dengan gambar latar belakang, dan beberapa card.",
   "textdomain": "kadence-child-theme",
   "attributes": {
     "imageUrl": {
@@ -17,7 +17,7 @@
     },
     "heading": {
       "type": "string",
-      "default": "Pondok Pesantren An-Nur II Al-Murtadlo"
+      "default": "Pondok Pesantren\nAn-Nur II Al-Murtadlo"
     },
     "description": {
       "type": "string",

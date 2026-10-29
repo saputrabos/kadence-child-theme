@@ -1,14 +1,22 @@
 .annur-social {
     position: relative;
     display: flex;
-    min-height: 386px;
-    align-items: center;
+    width: 100%;
+    max-width: 1264px;
+    min-height: 387px;
+    align-items: flex-start;
+    margin-inline: auto;
     overflow: hidden;
-    padding: 48px clamp(36px, 10vw, 156px);
-    border: 1px solid #d9dce0;
-    border-radius: 22px;
-    background: #fff;
+    padding: 50px 0 35px 10.45%;
+    border: 1px solid #ddd;
+    border-radius: 21px;
+    background-color: #fff;
+    background-image: var(--annur-social-background-image, url("https://annur2.net/wp-content/uploads/2026/10/footer2.jpeg"));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
@@ -20,39 +28,39 @@
 
 .annur-social__copy {
     position: relative;
-    z-index: 1;
-    width: min(72%, 960px);
-}
-
-.annur-social__eyebrow {
-    margin: 0 0 28px;
-    color: #171717;
-    font-size: 0.95rem;
-    line-height: 1.4;
+    z-index: 2;
+    width: 75%;
+    max-width: 1000px;
 }
 
 .annur-social__heading {
     max-width: 1000px;
-    margin: 0 0 24px;
+    margin: 0 0 27px;
+    padding: 0;
     color: #171717;
-    font-size: clamp(2.2rem, 4vw, 3.55rem);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
     font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.13;
+    letter-spacing: -1.4px;
+    line-height: 1.15;
 }
 
 .annur-social__description {
-    max-width: 700px;
-    margin: 0 0 26px;
+    margin: 0 0 24px;
+    padding: 0;
     color: #171717;
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-    line-height: 1.45;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 .annur-social__links {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 7px;
+    margin: 0;
+    padding: 0;
 }
 
 .annur-social__icon {
@@ -65,13 +73,14 @@
     border-radius: 50%;
     color: #fff;
     text-decoration: none;
-    transition: transform 160ms ease, filter 160ms ease;
+    outline: none;
+    transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
 a.annur-social__icon:hover,
 a.annur-social__icon:focus-visible {
-    transform: translateY(-3px);
-    filter: brightness(0.9);
+    transform: translateY(-4px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.15);
 }
 
 .annur-social__icon svg {
@@ -81,19 +90,19 @@ a.annur-social__icon:focus-visible {
 }
 
 .annur-social__icon.is-facebook {
-    background: #3b5998;
+    background-color: #3b5998;
 }
 
 .annur-social__icon.is-instagram {
-    background: #e72d68;
+    background-color: #e72d68;
 }
 
 .annur-social__icon.is-youtube {
-    background: #d71920;
+    background-color: #d51e20;
 }
 
 .annur-social__icon.is-tiktok {
-    background: #050505;
+    background-color: #000;
 }
 
 .annur-social__art {
@@ -116,34 +125,35 @@ a.annur-social__icon:focus-visible {
     object-position: center bottom;
 }
 
-.annur-social::before {
-    position: absolute;
-    bottom: 0;
-    left: 4%;
-    width: 28%;
-    height: 68%;
-    background-image:
-        linear-gradient(#e9eaec, #e9eaec),
-        linear-gradient(#e9eaec, #e9eaec),
-        linear-gradient(#e9eaec, #e9eaec),
-        linear-gradient(#e9eaec, #e9eaec),
-        linear-gradient(#e9eaec, #e9eaec),
-        linear-gradient(#e9eaec, #e9eaec);
-    background-position: 10% 18%, 10% 55%, 38% 18%, 38% 55%, 66% 18%, 66% 55%;
-    background-repeat: no-repeat;
-    background-size: 2px 48px, 64px 2px, 2px 48px, 64px 2px, 2px 48px, 64px 2px;
-    content: "";
-    pointer-events: none;
-}
-
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     .annur-social {
-        min-height: 360px;
-        padding: 42px clamp(28px, 6vw, 52px);
+        min-height: 330px;
+        padding: 42px 0 30px 7%;
     }
 
     .annur-social__copy {
         width: 78%;
+    }
+
+    .annur-social__heading {
+        max-width: 750px;
+        margin-bottom: 22px;
+        font-size: clamp(34px, 4.5vw, 46px);
+        letter-spacing: -0.8px;
+        line-height: 1.17;
+    }
+
+    .annur-social__description {
+        max-width: 650px;
+        margin-bottom: 22px;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .annur-social__icon {
+        flex-basis: 53px;
+        width: 53px;
+        height: 53px;
     }
 
     .annur-social__art {
@@ -151,47 +161,46 @@ a.annur-social__icon:focus-visible {
         width: 30%;
         height: 65%;
     }
-
-    .annur-social__heading {
-        font-size: clamp(2rem, 5vw, 2.8rem);
-    }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 767px) {
     .annur-social {
-        min-height: 0;
-        align-items: flex-start;
-        padding: 30px 24px 190px;
-        border-radius: 18px;
+        min-height: 390px;
+        padding: 32px 24px 145px;
+        border-radius: 16px;
+        background-position: right bottom;
+        background-size: auto 100%;
     }
 
     .annur-social__copy {
         width: 100%;
-    }
-
-    .annur-social__eyebrow {
-        margin-bottom: 18px;
+        max-width: 100%;
     }
 
     .annur-social__heading {
+        max-width: 100%;
         margin-bottom: 16px;
-        font-size: clamp(1.9rem, 8vw, 2.5rem);
+        font-size: clamp(28px, 7.2vw, 38px);
+        letter-spacing: -0.7px;
+        line-height: 1.2;
     }
 
     .annur-social__description {
-        margin-bottom: 20px;
-        font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 19px;
+        font-size: 15px;
+        line-height: 1.5;
     }
 
     .annur-social__icon {
-        flex-basis: 52px;
-        width: 52px;
-        height: 52px;
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
     }
 
     .annur-social__icon svg {
-        width: 26px;
-        height: 26px;
+        width: 23px;
+        height: 23px;
     }
 
     .annur-social__art {
@@ -199,11 +208,30 @@ a.annur-social__icon:focus-visible {
         width: 48%;
         height: 175px;
     }
+}
 
-    .annur-social::before {
-        left: 4%;
-        width: 45%;
-        height: 155px;
+@media (max-width: 380px) {
+    .annur-social {
+        min-height: 370px;
+        padding: 27px 18px 130px;
+    }
+
+    .annur-social__heading {
+        font-size: 27px;
+    }
+
+    .annur-social__description {
+        font-size: 14px;
+    }
+
+    .annur-social__icon {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .annur-social__links {
+        gap: 7px;
     }
 }
 

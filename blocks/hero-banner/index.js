@@ -117,7 +117,7 @@
     }
 
     function attributeControl(label, attributes, setAttributes, key, type) {
-        var Control = type === 'textarea' ? TextareaControl : TextControl;
+        var Control = type === 'url' ? TextControl : TextareaControl;
 
         return el(Control, {
             label: label,
@@ -129,6 +129,16 @@
                 setAttributes(update);
             },
         });
+    }
+
+    function textWithLineBreaks(value) {
+        return (value || '').split(/\r\n|\r|\n/).reduce(function (lines, line, index) {
+            if (index > 0) {
+                lines.push(el('br', { key: 'break-' + index }));
+            }
+            lines.push(line);
+            return lines;
+        }, []);
     }
 
     wp.blocks.registerBlockType('kadence-child/hero-banner', {
@@ -173,7 +183,7 @@
                             fontWeight: attributes.statTitleFontWeight,
                             color: attributes.statTitleColor,
                         },
-                    }, item.title),
+                    }, textWithLineBreaks(item.title)),
                     el('span', {
                         className: 'kadence-hero__stat-text',
                         style: {
@@ -182,7 +192,7 @@
                             fontWeight: attributes.statTextFontWeight,
                             color: attributes.statTextColor,
                         },
-                    }, item.text)
+                    }, textWithLineBreaks(item.text))
                 );
             });
 
@@ -231,7 +241,7 @@
                                 fontWeight: attributes.awardTextFontWeight,
                                 color: attributes.awardTextColor,
                             },
-                        }, attributes.achievementOneText)
+                        }, textWithLineBreaks(attributes.achievementOneText))
                     ),
                     el('div', { className: 'kadence-hero__stats' }, stats),
                     el('div', { className: 'kadence-hero__copy' },
@@ -243,7 +253,7 @@
                                 fontWeight: attributes.headingFontWeight,
                                 color: attributes.headingColor,
                             },
-                        }, attributes.heading),
+                        }, textWithLineBreaks(attributes.heading)),
                         el('p', {
                             className: 'kadence-hero__description',
                             style: {
@@ -252,7 +262,7 @@
                                 fontWeight: attributes.descriptionFontWeight,
                                 color: attributes.descriptionColor,
                             },
-                        }, attributes.description),
+                        }, textWithLineBreaks(attributes.description)),
                         el('div', { className: 'kadence-hero__actions' },
                             el('span', {
                                 className: 'kadence-hero__button',
@@ -263,7 +273,7 @@
                                     fontWeight: attributes.buttonFontWeight,
                                     color: attributes.buttonTextColor,
                                 },
-                            }, attributes.buttonText),
+                            }, textWithLineBreaks(attributes.buttonText)),
                             el('span', {
                                 className: 'kadence-hero__play',
                                 'aria-hidden': true,

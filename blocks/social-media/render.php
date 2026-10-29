@@ -1,8 +1,12 @@
 <?php
-$eyebrow = isset($attributes['eyebrow']) ? sanitize_text_field($attributes['eyebrow']) : 'Sosial Media';
 $heading = isset($attributes['heading']) ? sanitize_text_field($attributes['heading']) : 'Silahkan Kunjungi Sosial Media Kami';
 $description = isset($attributes['description']) ? sanitize_textarea_field($attributes['description']) : '';
+$background_image_url = isset($attributes['backgroundImageUrl']) ? esc_url($attributes['backgroundImageUrl']) : '';
 $image_url = isset($attributes['imageUrl']) ? esc_url($attributes['imageUrl']) : '';
+$section_attributes = array('class' => 'annur-social');
+if ($background_image_url) {
+    $section_attributes['style'] = '--annur-social-background-image:url("' . $background_image_url . '");';
+}
 $platforms = array(
     'facebook' => array(
         'label' => 'Facebook',
@@ -26,11 +30,8 @@ $platforms = array(
     ),
 );
 ?>
-<section <?php echo get_block_wrapper_attributes(array('class' => 'annur-social')); ?>>
+<section <?php echo get_block_wrapper_attributes($section_attributes); ?>>
     <div class="annur-social__copy">
-        <?php if ($eyebrow) : ?>
-            <p class="annur-social__eyebrow"><?php echo esc_html($eyebrow); ?></p>
-        <?php endif; ?>
         <?php if ($heading) : ?>
             <h2 class="annur-social__heading"><?php echo esc_html($heading); ?></h2>
         <?php endif; ?>

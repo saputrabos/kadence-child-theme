@@ -5,6 +5,7 @@ return array(
         'wp-element',
         'wp-block-editor',
         'wp-components',
+        'wp-data',
         'wp-i18n',
         'wp-server-side-render',
     ),

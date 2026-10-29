@@ -2,10 +2,10 @@
   "apiVersion": 3,
   "name": "kadence-child/latest-articles",
   "version": "1.0.0",
-  "title": "Artikel Terbaru",
+  "title": "Post Slider",
   "category": "kadence-child",
   "icon": "admin-post",
-  "description": "Menampilkan artikel terbaru dalam kartu yang dapat digeser.",
+  "description": "Menampilkan artikel dalam kartu yang dapat digeser.",
   "textdomain": "kadence-child-theme",
   "attributes": {
     "heading": {
@@ -15,6 +15,18 @@
     "postsToShow": {
       "type": "number",
       "default": 6
+    },
+    "contentSource": {
+      "type": "string",
+      "default": "posts"
+    },
+    "categoryId": {
+      "type": "number",
+      "default": 0
+    },
+    "pageId": {
+      "type": "number",
+      "default": 0
     }
   },
   "supports": {

@@ -5,13 +5,9 @@
   "title": "Sosial Media",
   "category": "kadence-child",
   "icon": "share",
-  "description": "Ajakan mengikuti akun sosial media dengan ilustrasi dan tautan.",
+  "description": "Ajakan mengikuti akun sosial media dengan CTA dan tautan.",
   "textdomain": "kadence-child-theme",
   "attributes": {
-    "eyebrow": {
-      "type": "string",
-      "default": "Sosial Media"
-    },
     "heading": {
       "type": "string",
       "default": "Silahkan Kunjungi Sosial Media Kami"
@@ -19,6 +15,13 @@
     "description": {
       "type": "string",
       "default": "Silakan kunjungi sosial media kami yang lain terkait berita dan informasi terbaru dari kami"
+    },
+    "backgroundImageUrl": {
+      "type": "string",
+      "default": "https://annur2.net/wp-content/uploads/2026/10/footer2.jpeg"
+    },
+    "backgroundImageId": {
+      "type": "number"
     },
     "imageUrl": {
       "type": "string",

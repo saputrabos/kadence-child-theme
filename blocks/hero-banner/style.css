@@ -97,7 +97,6 @@
     padding: 14px 32px;
     border: 0;
     border-radius: 999px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
     text-align: center;
     text-decoration: none;
     font-size: var(--kadence-hero-button-size, 17px);
@@ -123,7 +122,6 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
     background: linear-gradient(135deg, #0e3362, #0b2850);
-    box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.06), 0 8px 25px rgba(0, 0, 0, 0.3);
     color: #fff;
     text-decoration: none;
     transition: transform 180ms ease, filter 180ms ease;
@@ -162,7 +160,7 @@
     z-index: 2;
     width: 180px;
     border: 1px solid rgba(255, 255, 255, 0.16);
-    background: rgba(20, 30, 40, 0.34);
+    background: rgba(255, 255, 255, 0.12);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
     -webkit-backdrop-filter: blur(12px);
@@ -254,13 +252,6 @@
     color: #fff;
     text-decoration: none;
     transition: background-color 160ms ease, transform 160ms ease;
-}
-
-a.kadence-hero__stat:hover,
-a.kadence-hero__stat:focus-visible {
-    background: rgba(20, 30, 40, 0.52);
-    color: #fff;
-    transform: translateY(-2px);
 }
 
 .kadence-hero__stat-title {
@@ -399,6 +390,7 @@ a.kadence-hero__stat:focus-visible {
     }
 
     .kadence-hero__heading {
+        white-space: pre-line;
         margin-bottom: 14px;
         font-size: clamp(24px, min(8vw, var(--kadence-hero-heading-size, 40px)), 42px);
         letter-spacing: -0.03em;

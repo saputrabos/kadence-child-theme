@@ -70,6 +70,17 @@
                             },
                         })
                     ),
+                    el(TextControl, {
+                        label: __('URL gambar logo', 'kadence-child-theme'),
+                        type: 'url',
+                        value: attributes[imageKey] || '',
+                        onChange: function (value) {
+                            var update = {};
+                            update[imageKey] = value;
+                            update[imageIdKey] = undefined;
+                            setAttributes(update);
+                        },
+                    }),
                     attributes[imageKey] ? el(Button, {
                         variant: 'tertiary',
                         isDestructive: true,

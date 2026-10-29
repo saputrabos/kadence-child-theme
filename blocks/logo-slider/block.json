@@ -2,10 +2,10 @@
   "apiVersion": 3,
   "name": "kadence-child/bump-partners",
   "version": "1.0.0",
-  "title": "BUMP Ponpes An-Nur II",
+  "title": "Logo Slider",
   "category": "kadence-child",
   "icon": "groups",
-  "description": "Menampilkan logo unit BUMP dalam baris melingkar.",
+  "description": "Menampilkan logo dalam gambar yang dapat di geser.",
   "textdomain": "kadence-child-theme",
   "attributes": {
     "heading": {

@@ -67,7 +67,14 @@
         edit: function (props) {
             var attributes = props.attributes;
             var setAttributes = props.setAttributes;
-            var blockProps = wp.blockEditor.useBlockProps({ className: 'annur-social' });
+            var blockProps = wp.blockEditor.useBlockProps({
+                className: 'annur-social',
+                style: {
+                    '--annur-social-background-image': attributes.backgroundImageUrl
+                        ? 'url("' + attributes.backgroundImageUrl + '")'
+                        : 'none',
+                },
+            });
 
             var platformControls = platforms.map(function (platform) {
                 var attribute = platform.key + 'Url';
@@ -100,11 +107,6 @@
                         initialOpen: true,
                     },
                         el(TextControl, {
-                            label: __('Teks kecil', 'kadence-child-theme'),
-                            value: attributes.eyebrow,
-                            onChange: function (value) { setAttributes({ eyebrow: value }); },
-                        }),
-                        el(TextControl, {
                             label: __('Judul', 'kadence-child-theme'),
                             value: attributes.heading,
                             onChange: function (value) { setAttributes({ heading: value }); },
@@ -115,6 +117,38 @@
                             onChange: function (value) { setAttributes({ description: value }); },
                         }),
                         platformControls
+                    ),
+                    el(PanelBody, {
+                        title: __('Background', 'kadence-child-theme'),
+                        initialOpen: false,
+                    },
+                        el(MediaUploadCheck, null,
+                            el(MediaUpload, {
+                                onSelect: function (media) {
+                                    setAttributes({
+                                        backgroundImageUrl: media.url,
+                                        backgroundImageId: media.id,
+                                    });
+                                },
+                                allowedTypes: ['image'],
+                                value: attributes.backgroundImageId,
+                                render: function (mediaProps) {
+                                    return el(Button, {
+                                        variant: 'secondary',
+                                        onClick: mediaProps.open,
+                                    }, attributes.backgroundImageUrl
+                                        ? __('Ganti gambar background', 'kadence-child-theme')
+                                        : __('Pilih gambar background', 'kadence-child-theme'));
+                                },
+                            })
+                        ),
+                        attributes.backgroundImageUrl ? el(Button, {
+                            variant: 'tertiary',
+                            isDestructive: true,
+                            onClick: function () {
+                                setAttributes({ backgroundImageUrl: '', backgroundImageId: undefined });
+                            },
+                        }, __('Hapus gambar background', 'kadence-child-theme')) : null
                     ),
                     el(PanelBody, {
                         title: __('Ilustrasi', 'kadence-child-theme'),
@@ -148,7 +182,6 @@
                 ),
                 el('section', blockProps,
                     el('div', { className: 'annur-social__copy' },
-                        el('p', { className: 'annur-social__eyebrow' }, attributes.eyebrow),
                         el('h2', { className: 'annur-social__heading' }, attributes.heading),
                         el('p', { className: 'annur-social__description' }, attributes.description),
                         el('div', { className: 'annur-social__links' }, socialLinks)

@@ -2,14 +2,34 @@
 $heading = isset($attributes['heading']) ? sanitize_text_field($attributes['heading']) : 'Artikel Terbaru';
 $posts_to_show = isset($attributes['postsToShow']) ? absint($attributes['postsToShow']) : 6;
 $posts_to_show = min(12, max(1, $posts_to_show));
+$content_source = isset($attributes['contentSource']) && 'pages' === $attributes['contentSource'] ? 'page' : 'post';
+$category_id = isset($attributes['categoryId']) ? absint($attributes['categoryId']) : 0;
+$page_id = isset($attributes['pageId']) ? absint($attributes['pageId']) : 0;
 
-$articles = new WP_Query(array(
-    'post_type'           => 'post',
+$query_args = array(
+    'post_type'           => $content_source,
     'post_status'         => 'publish',
-    'posts_per_page'      => $posts_to_show,
+    'posts_per_page'      => 'page' === $content_source ? 1 : $posts_to_show,
     'ignore_sticky_posts' => true,
     'no_found_rows'       => true,
-));
+);
+
+if ('page' === $content_source) {
+    $query_args['post__in'] = $page_id ? array($page_id) : array(0);
+    $query_args['orderby'] = 'post__in';
+} elseif ($category_id) {
+    $query_args['category__in'] = array($category_id);
+}
+
+$articles = new WP_Query($query_args);
+$selected_category_name = '';
+
+if ('post' === $content_source && $category_id) {
+    $selected_category = get_term($category_id, 'category');
+    if ($selected_category && !is_wp_error($selected_category)) {
+        $selected_category_name = $selected_category->name;
+    }
+}
 
 $block_id = wp_unique_id('annur-articles-');
 ?>
@@ -25,7 +45,13 @@ $block_id = wp_unique_id('annur-articles-');
             aria-label="<?php echo esc_attr__('Geser ke artikel berikutnya', 'kadence-child-theme'); ?>"
             aria-controls="<?php echo esc_attr($block_id); ?>"
         >
-            <span aria-hidden="true">›</span>
+            <img
+                src="https://annur2.net/wp-content/uploads/2026/10/gambar_100kb.jpg"
+                alt=""
+                aria-hidden="true"
+                width="30"
+                height="30"
+            >
         </button>
     </div>
 
@@ -39,8 +65,10 @@ $block_id = wp_unique_id('annur-articles-');
             <?php while ($articles->have_posts()) : ?>
                 <?php
                 $articles->the_post();
-                $categories = get_the_category();
-                $category_name = !empty($categories) ? $categories[0]->name : __('Artikel', 'kadence-child-theme');
+                $categories = 'post' === $content_source ? get_the_category() : array();
+                $category_name = 'page' === $content_source
+                    ? __('Laman', 'kadence-child-theme')
+                    : ($selected_category_name ? $selected_category_name : (!empty($categories) ? $categories[0]->name : __('Artikel', 'kadence-child-theme')));
                 ?>
                 <article class="annur-articles__card">
                     <a class="annur-articles__image-link" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
@@ -82,6 +110,6 @@ $block_id = wp_unique_id('annur-articles-');
         </div>
         <?php wp_reset_postdata(); ?>
     <?php else : ?>
-        <p class="annur-articles__empty"><?php echo esc_html__('Belum ada artikel untuk ditampilkan.', 'kadence-child-theme'); ?></p>
+        <p class="annur-articles__empty"><?php echo esc_html__('Tidak ada konten untuk ditampilkan.', 'kadence-child-theme'); ?></p>
     <?php endif; ?>
 </section>

@@ -25,8 +25,8 @@ add_action('init', 'kadence_child_register_hero_block');
 
 function kadence_child_register_hero_block() {
     register_block_type(__DIR__ . '/blocks/hero-banner');
-    register_block_type(__DIR__ . '/blocks/latest-articles');
-    register_block_type(__DIR__ . '/blocks/bump-partners');
+    register_block_type(__DIR__ . '/blocks/post-slider');
+    register_block_type(__DIR__ . '/blocks/logo-slider');
     register_block_type(__DIR__ . '/blocks/social-media');
 }
 
