@@ -1,228 +1,454 @@
 .kadence-hero {
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 48px;
-    min-height: 640px;
-    padding: clamp(32px, 4vw, 72px);
+    isolation: isolate;
+    width: 100%;
+    min-height: 600px;
     overflow: hidden;
-    border-radius: 34px;
-    background-color: #263b36;
-    background-position: center;
-    background-size: cover;
+    border-radius: 32px;
+    background: #172a35;
     color: #fff;
     box-sizing: border-box;
 }
 
+.kadence-hero *,
+.kadence-hero *::before,
+.kadence-hero *::after {
+    box-sizing: inherit;
+}
+
+.kadence-hero__background,
+.kadence-hero__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kadence-hero__background {
+    z-index: -2;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.kadence-hero__overlay {
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.78) 0%,
+        rgba(0, 0, 0, 0.55) 42%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
 .kadence-hero__copy {
-    position: relative;
+    position: absolute;
+    bottom: 150px;
+    left: clamp(24px, 3.2vw, 48px);
     z-index: 1;
-    width: min(760px, 70%);
+    width: min(700px, calc(100% - 280px));
 }
 
 .kadence-hero__heading {
-    max-width: 760px;
-    margin: 0 0 22px;
-    color: inherit;
-    font-size: clamp(2.5rem, 5vw, 4.65rem);
-    font-weight: 750;
-    line-height: 1.08;
+    max-width: 700px;
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: clamp(24px, var(--kadence-hero-heading-size, 62px), 96px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
 }
 
 .kadence-hero__description {
-    max-width: 680px;
-    margin: 0 0 28px;
+    max-width: 540px;
+    margin: 0;
     color: rgba(255, 255, 255, 0.88);
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    line-height: 1.75;
+    font-size: var(--kadence-hero-description-size, 17px);
+    line-height: 1.7;
+}
+
+.kadence-hero__shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: min(443px, 45%);
+    height: 103px;
+    border-top-right-radius: 40px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.35), transparent);
+    pointer-events: none;
 }
 
 .kadence-hero__actions {
+    position: absolute;
+    bottom: 58px;
+    left: 20px;
+    z-index: 2;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 }
 
 .kadence-hero__button {
     display: inline-flex;
+    min-width: min(390px, calc(100vw - 120px));
+    min-height: 72px;
     align-items: center;
     justify-content: center;
-    min-height: 64px;
-    padding: 0 42px;
+    padding: 14px 32px;
+    border: 0;
     border-radius: 999px;
-    background: #24559b;
-    color: #fff;
-    font-weight: 700;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
     text-align: center;
     text-decoration: none;
-    transition: background-color 160ms ease;
+    font-size: var(--kadence-hero-button-size, 17px);
+    transition: transform 180ms ease, filter 180ms ease;
 }
 
 .kadence-hero__button:hover,
-.kadence-hero__button:focus {
-    background: #173d75;
+.kadence-hero__button:focus-visible {
     color: #fff;
+    filter: brightness(1.08);
+    transform: translateY(-2px);
 }
 
 .kadence-hero__play {
+    position: relative;
     display: inline-flex;
-    flex: 0 0 64px;
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    border: 2px solid rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
-    background: rgba(18, 68, 128, 0.82);
+    background: linear-gradient(135deg, #0e3362, #0b2850);
+    box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.06), 0 8px 25px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-decoration: none;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.kadence-hero__play::before {
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    content: "";
+}
+
+.kadence-hero__play:hover,
+.kadence-hero__play:focus-visible {
+    color: #fff;
+    filter: brightness(1.14);
+    transform: scale(1.06);
+}
+
+.kadence-hero__play-icon {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 14px solid currentColor;
+}
+
+.kadence-hero__award,
+.kadence-hero__stat {
+    position: absolute;
+    right: 30px;
+    z-index: 2;
+    width: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(20, 30, 40, 0.34);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.kadence-hero__award {
+    top: 30px;
+    padding: 12px;
+    border-radius: 24px;
+}
+
+.kadence-hero__award-link {
+    position: relative;
+    display: block;
     color: #fff;
     text-decoration: none;
 }
 
-.kadence-hero__play:hover,
-.kadence-hero__play:focus {
-    color: #fff;
-    background: #173d75;
+.kadence-hero__award-image,
+.kadence-hero__award-placeholder {
+    display: block;
+    width: 100%;
+    height: 140px;
+    border-radius: 17px;
+    object-fit: cover;
 }
 
-.kadence-hero__cards {
-    position: relative;
-    z-index: 1;
+.kadence-hero__award-placeholder {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.kadence-hero__award-title {
+    display: block;
+    margin: 12px 0 2px;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+
+.kadence-hero__card-action {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    place-items: center;
+    transition: background-color 160ms ease;
+}
+
+.kadence-hero__award-link:hover .kadence-hero__card-action,
+.kadence-hero__stat:hover .kadence-hero__card-action {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.kadence-hero__card-action svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.kadence-hero__stats {
+    position: absolute;
+    top: 250px;
+    right: 30px;
+    z-index: 2;
     display: flex;
-    flex: 0 0 216px;
+    width: 180px;
     flex-direction: column;
     gap: 12px;
-    width: 216px;
 }
 
-.kadence-hero__card {
+.kadence-hero__stat {
     position: relative;
     display: flex;
-    min-height: 170px;
+    min-height: 112px;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 22px 18px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 26px;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
-    text-align: center;
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-}
-
-.kadence-hero__card-title {
-    display: block;
-    margin-bottom: 12px;
+    padding: 18px;
+    border-radius: 22px;
     color: #fff;
-    font-size: 2.25rem;
-    font-weight: 750;
-    line-height: 1.05;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
 }
 
-.kadence-hero__card-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.92rem;
-    font-weight: 600;
-    line-height: 1.55;
+a.kadence-hero__stat:hover,
+a.kadence-hero__stat:focus-visible {
+    background: rgba(20, 30, 40, 0.52);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-.kadence-hero__card.is-featured {
-    min-height: 238px;
-    background: rgba(83, 112, 55, 0.5);
-}
-
-.kadence-hero__card.is-featured .kadence-hero__card-title {
-    margin-top: 20px;
-    color: #f5d252;
-    font-family: Georgia, serif;
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-}
-
-.kadence-hero__ribbon {
-    position: relative;
+.kadence-hero__stat-title {
     display: block;
-    width: 52px;
-    height: 32px;
-    margin-top: 12px;
-    background: linear-gradient(to bottom, #f8f8f8 0 50%, #d8202e 50% 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 74%, 50% 100%, 0 74%);
+    margin: 0 0 5px;
+    line-height: 1.1;
 }
 
-.kadence-hero__card.is-featured::after {
+.kadence-hero__stat-text {
+    display: block;
+    line-height: 1.5;
+}
+
+.kadence-hero__video {
+    position: fixed;
+    inset: 0;
+    width: min(92vw, 1000px);
+    max-width: none;
+    max-height: none;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: #000;
+    color: #fff;
+}
+
+.kadence-hero__video::backdrop {
+    background: rgba(0, 0, 0, 0.82);
+}
+
+.kadence-hero__video-frame,
+.kadence-hero__video-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.kadence-hero__video-close {
+    position: absolute;
+    top: -54px;
+    right: 0;
     display: grid;
-    width: 48px;
-    height: 48px;
-    margin-top: 12px;
-    border: 3px solid rgba(255, 219, 112, 0.8);
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
-    background: radial-gradient(circle, #f6db70, #98732c);
-    color: #77571d;
-    content: "★";
-    font-size: 24px;
-    line-height: 42px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    cursor: pointer;
     place-items: center;
 }
 
-@media (max-width: 780px) {
+.kadence-hero__video-close svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.kadence-hero__color-control {
+    margin-bottom: 20px;
+}
+
+.kadence-hero__color-control .components-base-control__label {
+    margin-bottom: 8px;
+}
+
+.kadence-hero-editor {
+    min-height: 600px;
+}
+
+@media (max-width: 900px) {
     .kadence-hero {
-        min-height: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 32px;
-        padding: 32px 24px;
-        border-radius: 24px;
+        min-height: 720px;
+    }
+
+    .kadence-hero__award,
+    .kadence-hero__stat {
+        right: 20px;
+        width: 160px;
+    }
+
+    .kadence-hero__award {
+        top: 20px;
+    }
+
+    .kadence-hero__award-image,
+    .kadence-hero__award-placeholder {
+        height: 120px;
+    }
+
+    .kadence-hero__stats {
+        top: 220px;
+        right: 20px;
+        width: 160px;
     }
 
     .kadence-hero__copy {
-        width: 100%;
-    }
-
-    .kadence-hero__cards {
-        display: grid;
-        flex: auto;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        width: 100%;
-        gap: 10px;
-    }
-
-    .kadence-hero__card,
-    .kadence-hero__card.is-featured {
-        min-height: 150px;
-        padding: 16px 10px;
-        border-radius: 18px;
-    }
-
-    .kadence-hero__card-title,
-    .kadence-hero__card.is-featured .kadence-hero__card-title {
-        font-size: clamp(1rem, 4vw, 1.55rem);
-    }
-
-    .kadence-hero__card-text {
-        font-size: 0.78rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .kadence-hero__cards {
-        grid-template-columns: 1fr;
-    }
-
-    .kadence-hero__card,
-    .kadence-hero__card.is-featured {
-        min-height: 120px;
-    }
-
-    .kadence-hero__actions {
-        flex-wrap: wrap;
+        bottom: 140px;
+        right: 205px;
+        left: 25px;
+        width: auto;
     }
 
     .kadence-hero__button {
-        min-height: 54px;
-        padding: 0 26px;
+        min-width: min(320px, calc(100vw - 130px));
+    }
+}
+
+@media (max-width: 600px) {
+    .kadence-hero {
+        min-height: 600px;
+        border-radius: 24px;
+    }
+
+    .kadence-hero__overlay {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.38));
+    }
+
+    .kadence-hero__award,
+    .kadence-hero__stats {
+        display: none;
+    }
+
+    .kadence-hero__copy {
+        right: 22px;
+        bottom: 150px;
+        left: 22px;
+        width: auto;
+    }
+
+    .kadence-hero__heading {
+        margin-bottom: 14px;
+        font-size: clamp(24px, min(8vw, var(--kadence-hero-heading-size, 40px)), 42px);
+        letter-spacing: -0.03em;
+    }
+
+    .kadence-hero__description {
+        font-size: clamp(12px, var(--kadence-hero-description-size, 14px), 16px);
+        line-height: 1.6;
+    }
+
+    .kadence-hero__shape {
+        display: none;
+    }
+
+    .kadence-hero__actions {
+        right: 22px;
+        bottom: 24px;
+        left: 22px;
+        gap: 10px;
+    }
+
+    .kadence-hero__button {
+        min-width: 0;
+        min-height: 53px;
+        flex: 1 1 auto;
+        padding: 10px 16px;
+        font-size: clamp(12px, var(--kadence-hero-button-size, 14px), 16px);
+    }
+
+    .kadence-hero__play {
+        flex-basis: 53px;
+        width: 53px;
+        height: 53px;
+    }
+
+    .kadence-hero__play-icon {
+        border-top-width: 7px;
+        border-bottom-width: 7px;
+        border-left-width: 11px;
+    }
+
+    .kadence-hero__video {
+        width: calc(100vw - 32px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .kadence-hero__button,
+    .kadence-hero__play,
+    .kadence-hero__stat {
+        transition: none;
     }
 }

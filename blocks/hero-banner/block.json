@@ -3,14 +3,14 @@
   "name": "kadence-child/hero-banner",
   "version": "1.0.0",
   "title": "Kadence Hero Banner",
-  "category": "design",
+  "category": "kadence-child",
   "icon": "cover-image",
   "description": "A full-width hero banner with background image, calls to action, and achievement cards.",
   "textdomain": "kadence-child-theme",
   "attributes": {
     "imageUrl": {
       "type": "string",
-      "default": ""
+      "default": "https://annur2.net/wp-content/uploads/2026/07/annur2_70kb.webp"
     },
     "imageId": {
       "type": "number"
@@ -29,11 +29,156 @@
     },
     "buttonUrl": {
       "type": "string",
-      "default": "#daftar"
+      "default": "https://annur2.net/psb/"
     },
     "videoUrl": {
       "type": "string",
+      "default": "https://www.youtube.com/watch?v=J88Ep4WaZ1s"
+    },
+    "buttonGradientStart": {
+      "type": "string",
+      "default": "#24559b"
+    },
+    "buttonGradientEnd": {
+      "type": "string",
+      "default": "#10345f"
+    },
+    "headingFontSize": {
+      "type": "number",
+      "default": 56
+    },
+    "headingFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "headingFontWeight": {
+      "type": "number",
+      "default": 750
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "descriptionFontSize": {
+      "type": "number",
+      "default": 20
+    },
+    "descriptionFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "descriptionFontWeight": {
+      "type": "number",
+      "default": 400
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": "#e0e0e0"
+    },
+    "buttonFontSize": {
+      "type": "number",
+      "default": 18
+    },
+    "buttonFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "buttonFontWeight": {
+      "type": "number",
+      "default": 700
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "cardTextFontSize": {
+      "type": "number",
+      "default": 15
+    },
+    "cardTextFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "cardTextFontWeight": {
+      "type": "number",
+      "default": 600
+    },
+    "cardTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "awardTextFontSize": {
+      "type": "number",
+      "default": 14
+    },
+    "awardTextFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "awardTextFontWeight": {
+      "type": "number",
+      "default": 600
+    },
+    "awardTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "statTitleFontSize": {
+      "type": "number",
+      "default": 32
+    },
+    "statTitleFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "statTitleFontWeight": {
+      "type": "number",
+      "default": 700
+    },
+    "statTitleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "statTextFontSize": {
+      "type": "number",
+      "default": 12
+    },
+    "statTextFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "statTextFontWeight": {
+      "type": "number",
+      "default": 400
+    },
+    "statTextColor": {
+      "type": "string",
+      "default": "#e0e0e0"
+    },
+    "achievementOneImage": {
+      "type": "string",
+      "default": "https://annur2.net/wp-content/uploads/2026/07/MURI_146x146.webp"
+    },
+    "achievementOneImageId": {
+      "type": "number"
+    },
+    "achievementOneUrl": {
+      "type": "string",
+      "default": "https://annur2.net/rekor-muri/"
+    },
+    "achievementTwoImage": {
+      "type": "string",
       "default": ""
+    },
+    "achievementTwoImageId": {
+      "type": "number"
+    },
+    "achievementThreeImage": {
+      "type": "string",
+      "default": ""
+    },
+    "achievementThreeImageId": {
+      "type": "number"
     },
     "achievementOneTitle": {
       "type": "string",
@@ -51,6 +196,10 @@
       "type": "string",
       "default": "Penghargaan Pesantren Modern Inspiratif"
     },
+    "achievementTwoUrl": {
+      "type": "string",
+      "default": "https://youtu.be/4NLyJ45m788"
+    },
     "achievementThreeTitle": {
       "type": "string",
       "default": "2024"
@@ -58,6 +207,10 @@
     "achievementThreeText": {
       "type": "string",
       "default": "Penghargaan One Pesantren One Product"
+    },
+    "achievementThreeUrl": {
+      "type": "string",
+      "default": "https://annur2.net/pesantren-an-nur-2-malang-teken-kerjasama-dengan-otai-group-malaysia/"
     }
   },
   "supports": {
@@ -69,5 +222,6 @@
   },
   "editorScript": "file:./index.js",
   "style": "file:./style.css",
+  "viewScript": "file:./view.js",
   "render": "file:./render.php"
 }

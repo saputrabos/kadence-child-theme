@@ -25,4 +25,19 @@ add_action('init', 'kadence_child_register_hero_block');
 
 function kadence_child_register_hero_block() {
     register_block_type(__DIR__ . '/blocks/hero-banner');
+    register_block_type(__DIR__ . '/blocks/latest-articles');
+    register_block_type(__DIR__ . '/blocks/bump-partners');
+    register_block_type(__DIR__ . '/blocks/social-media');
+}
+
+add_filter('block_categories_all', 'kadence_child_add_block_category', 10, 2);
+
+function kadence_child_add_block_category($categories, $editor_context) {
+    $categories[] = array(
+        'slug'  => 'kadence-child',
+        'title' => __('Kadence Child', 'kadence-child-theme'),
+        'icon'  => null,
+    );
+
+    return $categories;
 }

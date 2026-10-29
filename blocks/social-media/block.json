@@ -1,0 +1,57 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/social-media",
+  "version": "1.0.0",
+  "title": "Sosial Media",
+  "category": "kadence-child",
+  "icon": "share",
+  "description": "Ajakan mengikuti akun sosial media dengan ilustrasi dan tautan.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Sosial Media"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Silahkan Kunjungi Sosial Media Kami"
+    },
+    "description": {
+      "type": "string",
+      "default": "Silakan kunjungi sosial media kami yang lain terkait berita dan informasi terbaru dari kami"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number"
+    },
+    "facebookUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "instagramUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "tiktokUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

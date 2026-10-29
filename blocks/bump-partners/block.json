@@ -1,0 +1,101 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/bump-partners",
+  "version": "1.0.0",
+  "title": "BUMP Ponpes An-Nur II",
+  "category": "kadence-child",
+  "icon": "groups",
+  "description": "Menampilkan logo unit BUMP dalam baris melingkar.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "BUMP Ponpes An-Nur II Al-Murtadlo"
+    },
+    "itemOneLabel": {
+      "type": "string",
+      "default": "Ziarah Rasul"
+    },
+    "itemOneImage": {
+      "type": "string",
+      "default": ""
+    },
+    "itemOneImageId": {
+      "type": "number"
+    },
+    "itemOneUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "itemTwoLabel": {
+      "type": "string",
+      "default": "Kaosant"
+    },
+    "itemTwoImage": {
+      "type": "string",
+      "default": ""
+    },
+    "itemTwoImageId": {
+      "type": "number"
+    },
+    "itemTwoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "itemThreeLabel": {
+      "type": "string",
+      "default": "Kapiten"
+    },
+    "itemThreeImage": {
+      "type": "string",
+      "default": ""
+    },
+    "itemThreeImageId": {
+      "type": "number"
+    },
+    "itemThreeUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "itemFourLabel": {
+      "type": "string",
+      "default": "Wisata Bakery"
+    },
+    "itemFourImage": {
+      "type": "string",
+      "default": ""
+    },
+    "itemFourImageId": {
+      "type": "number"
+    },
+    "itemFourUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "itemFiveLabel": {
+      "type": "string",
+      "default": "Air Mineral"
+    },
+    "itemFiveImage": {
+      "type": "string",
+      "default": ""
+    },
+    "itemFiveImageId": {
+      "type": "number"
+    },
+    "itemFiveUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

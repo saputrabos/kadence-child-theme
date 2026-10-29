@@ -1,0 +1,139 @@
+.annur-bump {
+    --annur-bump-blue: #315da8;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.annur-bump *,
+.annur-bump *::before,
+.annur-bump *::after {
+    box-sizing: inherit;
+}
+
+.annur-bump__header {
+    display: flex;
+    min-height: 106px;
+    align-items: center;
+    padding: 24px clamp(24px, 4vw, 60px);
+    border: 1px solid #d9dce0;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.annur-bump__heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 0;
+    color: #171d25;
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.annur-bump__heading-dot {
+    flex: 0 0 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--annur-bump-blue);
+}
+
+.annur-bump__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 28px 42px;
+    margin: 42px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.annur-bump__item {
+    flex: 0 1 100px;
+    min-width: 90px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.annur-bump__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #111;
+    text-decoration: none;
+}
+
+.annur-bump__logo {
+    display: block;
+    width: 96px;
+    height: 96px;
+    padding: 4px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #f0f2f4;
+    box-shadow: 0 2px 8px rgba(20, 32, 45, 0.2);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.annur-bump__link:hover .annur-bump__logo,
+.annur-bump__link:focus-visible .annur-bump__logo {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 14px rgba(20, 32, 45, 0.24);
+}
+
+.annur-bump__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.annur-bump__image--placeholder {
+    background: linear-gradient(135deg, #dce5eb, #f3f5f7);
+}
+
+.annur-bump__label {
+    display: block;
+    max-width: 150px;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+@media (max-width: 600px) {
+    .annur-bump__header {
+        min-height: 90px;
+        padding: 18px 20px;
+        border-radius: 16px;
+    }
+
+    .annur-bump__list {
+        gap: 24px 18px;
+        margin-top: 30px;
+    }
+
+    .annur-bump__item {
+        flex-basis: 90px;
+    }
+
+    .annur-bump__logo {
+        width: 82px;
+        height: 82px;
+    }
+
+    .annur-bump__label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .annur-bump__logo {
+        transition: none;
+    }
+}
