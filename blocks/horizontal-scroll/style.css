@@ -1,7 +1,9 @@
 .annur-scroll-menu {
     display: flex;
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
+    margin-inline: calc(50% - 50vw);
     gap: 20px;
     overflow-x: auto;
     padding: 5px;

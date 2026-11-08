@@ -165,8 +165,8 @@ a.annur-social__icon:focus-visible {
 
 @media (max-width: 767px) {
     .annur-social {
-        min-height: 390px;
-        padding: 32px 24px 145px;
+        min-height: 175px;
+        padding: 14px 12px 12px;
         border-radius: 16px;
         background-position: right bottom;
         background-size: auto 100%;
@@ -179,49 +179,17 @@ a.annur-social__icon:focus-visible {
 
     .annur-social__heading {
         max-width: 100%;
-        margin-bottom: 16px;
-        font-size: clamp(28px, 7.2vw, 38px);
-        letter-spacing: -0.7px;
+        margin-bottom: 8px;
+        font-size: clamp(22px, 6vw, 28px);
+        letter-spacing: -0.4px;
         line-height: 1.2;
     }
 
     .annur-social__description {
         max-width: 100%;
-        margin-bottom: 19px;
-        font-size: 15px;
-        line-height: 1.5;
-    }
-
-    .annur-social__icon {
-        flex-basis: 46px;
-        width: 46px;
-        height: 46px;
-    }
-
-    .annur-social__icon svg {
-        width: 23px;
-        height: 23px;
-    }
-
-    .annur-social__art {
-        right: 4%;
-        width: 48%;
-        height: 175px;
-    }
-}
-
-@media (max-width: 380px) {
-    .annur-social {
-        min-height: 370px;
-        padding: 27px 18px 130px;
-    }
-
-    .annur-social__heading {
-        font-size: 27px;
-    }
-
-    .annur-social__description {
+        margin-bottom: 18px;
         font-size: 14px;
+        line-height: 1.3;
     }
 
     .annur-social__icon {
@@ -230,8 +198,45 @@ a.annur-social__icon:focus-visible {
         height: 42px;
     }
 
+    .annur-social__icon svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .annur-social__art {
+        right: 2%;
+        width: 34%;
+        height: 96px;
+    }
+}
+
+@media (max-width: 380px) {
+    .annur-social {
+        min-height: 170px;
+        padding: 13px 10px 11px;
+    }
+
+    .annur-social__heading {
+        font-size: 22px;
+    }
+
+    .annur-social__description {
+        font-size: 13px;
+    }
+
+    .annur-social__icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
     .annur-social__links {
         gap: 7px;
+    }
+
+    .annur-social__art {
+        width: 35%;
+        height: 84px;
     }
 }
 
