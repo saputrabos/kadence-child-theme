@@ -28,6 +28,7 @@ function kadence_child_register_hero_block() {
     register_block_type(__DIR__ . '/blocks/post-slider');
     register_block_type(__DIR__ . '/blocks/logo-slider');
     register_block_type(__DIR__ . '/blocks/social-media');
+    register_block_type(__DIR__ . '/blocks/horizontal-scroll');
 }
 
 add_filter('block_categories_all', 'kadence_child_add_block_category', 10, 2);

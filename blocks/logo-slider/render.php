@@ -45,4 +45,5 @@ foreach (array('One', 'Two', 'Three', 'Four', 'Five') as $key) {
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
+    <div class="annur-bump__dots" aria-label="<?php esc_attr_e('Navigasi logo', 'kadence-child-theme'); ?>"></div>
 </section>

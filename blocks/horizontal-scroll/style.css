@@ -1,0 +1,31 @@
+.annur-scroll-menu {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 5px;
+    background: #1e3c82e6;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
+.annur-scroll-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.annur-scroll-menu a {
+    flex: 0 0 auto;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.annur-scroll-menu a:hover,
+.annur-scroll-menu a:focus-visible {
+    text-decoration: underline;
+}

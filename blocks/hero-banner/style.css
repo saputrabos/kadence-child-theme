@@ -331,7 +331,7 @@
 
 @media (max-width: 900px) {
     .kadence-hero {
-        min-height: 720px;
+        min-height: 760px;
     }
 
     .kadence-hero__award,
@@ -357,24 +357,47 @@
 
     .kadence-hero__copy {
         bottom: 140px;
-        right: 205px;
+        right: 25px;
         left: 25px;
         width: auto;
     }
 
+    .kadence-hero__heading {
+        font-size: 42px;
+    }
+
+    .kadence-hero__description {
+        font-size: 17px;
+    }
+
+    .kadence-hero__actions {
+        bottom: 59px;
+    }
+
     .kadence-hero__button {
+        width: 320px;
         min-width: min(320px, calc(100vw - 130px));
+        font-size: 17px;
     }
 }
 
 @media (max-width: 600px) {
     .kadence-hero {
-        min-height: 600px;
+        width: calc(100vw - 22px);
+        max-width: none;
+        margin-left: calc(50% - 50vw + 11px);
+        height: 515px;
+        min-height: 515px;
         border-radius: 24px;
     }
 
     .kadence-hero__overlay {
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.38));
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.55) 35%,
+            rgba(0, 0, 0, 0.15) 100%
+        );
     }
 
     .kadence-hero__award,
@@ -382,23 +405,26 @@
         display: none;
     }
 
-    .kadence-hero__copy {
-        right: 22px;
-        bottom: 150px;
-        left: 22px;
+    .kadence-hero .kadence-hero__copy {
+        top: 38px;
+        right: 28px;
+        bottom: auto;
+        left: 28px;
         width: auto;
     }
 
-    .kadence-hero__heading {
+    .kadence-hero .kadence-hero__heading {
         white-space: pre-line;
-        margin-bottom: 14px;
-        font-size: clamp(24px, min(8vw, var(--kadence-hero-heading-size, 40px)), 42px);
-        letter-spacing: -0.03em;
+        margin-bottom: 22px;
+        font-size: clamp(28px, 8vw, 38px);
+        line-height: 0.6;
+        letter-spacing: -0.05em;
     }
 
-    .kadence-hero__description {
-        font-size: clamp(12px, var(--kadence-hero-description-size, 14px), 16px);
-        line-height: 1.6;
+    .kadence-hero .kadence-hero__description {
+        max-width: 100%;
+        font-size: clamp(15px, 3.8vw, 18px);
+        line-height: 1.65;
     }
 
     .kadence-hero__shape {
@@ -406,24 +432,28 @@
     }
 
     .kadence-hero__actions {
-        right: 22px;
-        bottom: 24px;
-        left: 22px;
-        gap: 10px;
+        right: auto;
+        bottom: 29px;
+        left: 28px;
+        width: calc(100% - 56px);
+        gap: 12px;
     }
 
-    .kadence-hero__button {
+    .kadence-hero .kadence-hero__button {
         min-width: 0;
-        min-height: 53px;
-        flex: 1 1 auto;
-        padding: 10px 16px;
-        font-size: clamp(12px, var(--kadence-hero-button-size, 14px), 16px);
+        width: 100%;
+        height: 63px;
+        min-height: 63px;
+        flex: 1 1 0;
+        padding: 10px 12px;
+        font-size: clamp(12px, 3.8vw, 17px);
+        white-space: nowrap;
     }
 
     .kadence-hero__play {
-        flex-basis: 53px;
-        width: 53px;
-        height: 53px;
+        flex-basis: 66px;
+        width: 66px;
+        height: 66px;
     }
 
     .kadence-hero__play-icon {

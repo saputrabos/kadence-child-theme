@@ -1,0 +1,33 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/horizontal-scroll",
+  "version": "1.0.0",
+  "title": "Horizontal Scroll",
+  "category": "kadence-child",
+  "icon": "menu",
+  "description": "Menu tautan horizontal yang dapat digeser ke samping.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "linkOneLabel": { "type": "string", "default": "RA An-Nur" },
+    "linkOneUrl": { "type": "string", "default": "https://annur2.net/ra-an-nur-bululawang/" },
+    "linkTwoLabel": { "type": "string", "default": "MI An-Nur" },
+    "linkTwoUrl": { "type": "string", "default": "https://annur2.net/mi-an-nur-bululawang/" },
+    "linkThreeLabel": { "type": "string", "default": "SMP An-Nur" },
+    "linkThreeUrl": { "type": "string", "default": "https://annur2.net/smp-an-nur-bululawang/" },
+    "linkFourLabel": { "type": "string", "default": "SMA An-Nur" },
+    "linkFourUrl": { "type": "string", "default": "https://annur2.net/sma-an-nur-bululawang/" },
+    "linkFiveLabel": { "type": "string", "default": "STIKK" },
+    "linkFiveUrl": { "type": "string", "default": "https://annur2.net/stikk-muadalah-2-2/" },
+    "linkSixLabel": { "type": "string", "default": "Ma'had Aly" },
+    "linkSixUrl": { "type": "string", "default": "https://mahadalyannur2.ac.id/" },
+    "linkSevenLabel": { "type": "string", "default": "STAI Bad" },
+    "linkSevenUrl": { "type": "string", "default": "https://annur2.net/stai-kh-m-badruddin-anwar/" }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

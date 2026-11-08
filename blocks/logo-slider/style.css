@@ -105,6 +105,53 @@
     line-height: 1.35;
 }
 
+.annur-bump__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.annur-bump__dot {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #bbb;
+    cursor: pointer;
+}
+
+.annur-bump__dot[aria-current="true"] {
+    background: var(--annur-bump-blue);
+}
+
+@media (max-width: 1023px) {
+    .annur-bump__list {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .annur-bump__list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .annur-bump__item {
+        flex: 0 0 100px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .annur-bump__dots {
+        display: none;
+    }
+}
+
 @media (max-width: 600px) {
     .annur-bump__header {
         min-height: 90px;
