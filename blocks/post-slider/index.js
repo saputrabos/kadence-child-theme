@@ -6,6 +6,7 @@
     var RangeControl = wp.components.RangeControl;
     var SelectControl = wp.components.SelectControl;
     var TextControl = wp.components.TextControl;
+    var ToggleControl = wp.components.ToggleControl;
     var ServerSideRender = wp.serverSideRender;
     var useSelect = wp.data.useSelect;
 
@@ -58,6 +59,32 @@
                             value: attributes.heading,
                             onChange: function (value) {
                                 setAttributes({ heading: value });
+                            },
+                        }),
+                        el(ToggleControl, {
+                            label: __('Tampilkan titik pada judul', 'kadence-child-theme'),
+                            checked: attributes.showHeadingDot !== false,
+                            onChange: function (value) {
+                                setAttributes({ showHeadingDot: value });
+                            },
+                        }),
+                        el(SelectControl, {
+                            label: __('Posisi judul', 'kadence-child-theme'),
+                            value: attributes.headingAlignment || 'left',
+                            options: [
+                                { label: __('Kiri', 'kadence-child-theme'), value: 'left' },
+                                { label: __('Tengah', 'kadence-child-theme'), value: 'center' },
+                                { label: __('Kanan', 'kadence-child-theme'), value: 'right' },
+                            ],
+                            onChange: function (value) {
+                                setAttributes({ headingAlignment: value });
+                            },
+                        }),
+                        el(ToggleControl, {
+                            label: __('Tampilkan tombol geser', 'kadence-child-theme'),
+                            checked: attributes.showNextButton !== false,
+                            onChange: function (value) {
+                                setAttributes({ showNextButton: value });
                             },
                         }),
                         el(SelectControl, {

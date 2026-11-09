@@ -1,0 +1,35 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/header-category",
+  "version": "1.0.0",
+  "title": "Header Categori",
+  "category": "kadence-child",
+  "icon": "heading",
+  "description": "Header kategori dengan gaya yang sama seperti header Post Slider.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Kategori"
+    },
+    "showHeadingDot": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingAlignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "showNextButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

@@ -1,0 +1,31 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/rounded-navigation",
+  "version": "1.0.0",
+  "title": "Rounded Navigation",
+  "category": "kadence-child",
+  "icon": "menu",
+  "description": "Menu tautan berbentuk rounded yang responsif.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "linkOneLabel": { "type": "string", "default": "Nahwu" },
+    "linkOneUrl": { "type": "string", "default": "#" },
+    "linkTwoLabel": { "type": "string", "default": "Shorof" },
+    "linkTwoUrl": { "type": "string", "default": "#" },
+    "linkThreeLabel": { "type": "string", "default": "Fiqih" },
+    "linkThreeUrl": { "type": "string", "default": "#" },
+    "linkFourLabel": { "type": "string", "default": "Tauhid" },
+    "linkFourUrl": { "type": "string", "default": "#" },
+    "linkFiveLabel": { "type": "string", "default": "Akhlaq" },
+    "linkFiveUrl": { "type": "string", "default": "#" },
+    "linkSixLabel": { "type": "string", "default": "Mantiq" },
+    "linkSixUrl": { "type": "string", "default": "#" }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

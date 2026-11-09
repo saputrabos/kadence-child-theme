@@ -1,0 +1,61 @@
+{
+  "apiVersion": 3,
+  "name": "kadence-child/gallery-slider",
+  "version": "1.0.0",
+  "title": "Gallery Slider",
+  "category": "kadence-child",
+  "icon": "images-alt2",
+  "description": "Galeri destinasi dalam carousel yang dapat digeser.",
+  "textdomain": "kadence-child-theme",
+  "attributes": {
+    "galleryItems": {
+      "type": "array",
+      "default": [
+        {
+          "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&auto=format&fit=crop&q=85",
+          "title": "Mount Cook",
+          "location": "Canterbury, New Zealand",
+          "rating": "2.5k"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop&q=85",
+          "title": "Southern Alps",
+          "location": "South Island, New Zealand",
+          "rating": "1.8k"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=700&auto=format&fit=crop&q=85",
+          "title": "Mountain Valley",
+          "location": "Swiss Alps, Switzerland",
+          "rating": "1.2k"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=85",
+          "title": "Tropical Beach",
+          "location": "Bali, Indonesia",
+          "rating": "3.1k"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=700&auto=format&fit=crop&q=85",
+          "title": "Blue Lagoon",
+          "location": "Maldives",
+          "rating": "2.4k"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700&auto=format&fit=crop&q=85",
+          "title": "Lake View",
+          "location": "Dolomites, Italy",
+          "rating": "1.9k"
+        }
+      ]
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

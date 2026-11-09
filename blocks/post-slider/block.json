@@ -12,6 +12,18 @@
       "type": "string",
       "default": "Artikel Terbaru"
     },
+    "showHeadingDot": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingAlignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "showNextButton": {
+      "type": "boolean",
+      "default": true
+    },
     "postsToShow": {
       "type": "number",
       "default": 6

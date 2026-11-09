@@ -29,6 +29,9 @@ function kadence_child_register_hero_block() {
     register_block_type(__DIR__ . '/blocks/logo-slider');
     register_block_type(__DIR__ . '/blocks/social-media');
     register_block_type(__DIR__ . '/blocks/horizontal-scroll');
+    register_block_type(__DIR__ . '/blocks/gallery-slider');
+    register_block_type(__DIR__ . '/blocks/rounded-navigation');
+    register_block_type(__DIR__ . '/blocks/header-category');
 }
 
 add_filter('block_categories_all', 'kadence_child_add_block_category', 10, 2);

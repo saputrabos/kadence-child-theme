@@ -1,5 +1,9 @@
 <?php
 $heading = isset($attributes['heading']) ? sanitize_text_field($attributes['heading']) : 'Artikel Terbaru';
+$show_heading_dot = !isset($attributes['showHeadingDot']) || (bool) $attributes['showHeadingDot'];
+$heading_alignment = isset($attributes['headingAlignment']) ? sanitize_key($attributes['headingAlignment']) : 'left';
+$heading_alignment = in_array($heading_alignment, array('left', 'center', 'right'), true) ? $heading_alignment : 'left';
+$show_next_button = !isset($attributes['showNextButton']) || (bool) $attributes['showNextButton'];
 $posts_to_show = isset($attributes['postsToShow']) ? absint($attributes['postsToShow']) : 6;
 $posts_to_show = min(12, max(1, $posts_to_show));
 $content_source = isset($attributes['contentSource']) && 'pages' === $attributes['contentSource'] ? 'page' : 'post';
@@ -34,25 +38,29 @@ if ('post' === $content_source && $category_id) {
 $block_id = wp_unique_id('annur-articles-');
 ?>
 <section <?php echo get_block_wrapper_attributes(array('class' => 'annur-articles')); ?>>
-    <div class="annur-articles__header">
+    <div class="annur-articles__header annur-articles__header--<?php echo esc_attr($heading_alignment); ?>">
         <h2 class="annur-articles__heading">
-            <span class="annur-articles__heading-dot" aria-hidden="true"></span>
+            <?php if ($show_heading_dot) : ?>
+                <span class="annur-articles__heading-dot" aria-hidden="true"></span>
+            <?php endif; ?>
             <?php echo esc_html($heading); ?>
         </h2>
-        <button
-            class="annur-articles__next"
-            type="button"
-            aria-label="<?php echo esc_attr__('Geser ke artikel berikutnya', 'kadence-child-theme'); ?>"
-            aria-controls="<?php echo esc_attr($block_id); ?>"
-        >
-            <img
-                src="https://annur2.net/wp-content/uploads/2026/10/gambar_100kb.jpg"
-                alt=""
-                aria-hidden="true"
-                width="30"
-                height="30"
+        <?php if ($show_next_button) : ?>
+            <button
+                class="annur-articles__next"
+                type="button"
+                aria-label="<?php echo esc_attr__('Geser ke artikel berikutnya', 'kadence-child-theme'); ?>"
+                aria-controls="<?php echo esc_attr($block_id); ?>"
             >
-        </button>
+                <img
+                    src="https://annur2.net/wp-content/uploads/2026/10/gambar_100kb.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    width="30"
+                    height="30"
+                >
+            </button>
+        <?php endif; ?>
     </div>
 
     <?php if ($articles->have_posts()) : ?>
