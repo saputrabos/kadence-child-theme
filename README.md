@@ -19,3 +19,5 @@ Add **Artikel Terbaru** from the same category to display the latest published p
 Add **BUMP Ponpes An-Nur II** to show five circular BUMP logos. In the block settings, choose an image, edit each unit name, and optionally add its link.
 
 Add **Sosial Media** to display a social-media callout with Facebook, Instagram, YouTube, and TikTok links. Edit the text and account URLs in the block settings, and optionally select an illustration from the Media Library.
+
+Add **Card Category** to display four responsive image cards. Edit each card's category label, title, description, image, button text, and optional destination URL in the block settings.

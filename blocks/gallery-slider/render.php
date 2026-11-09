@@ -19,19 +19,12 @@ $items = array_filter($items, static function ($item) {
                 $image = isset($item['image']) ? esc_url($item['image']) : '';
                 $title = isset($item['title']) ? sanitize_text_field($item['title']) : '';
                 $location = isset($item['location']) ? sanitize_text_field($item['location']) : '';
-                $rating = isset($item['rating']) ? sanitize_text_field($item['rating']) : '';
                 ?>
                 <article class="gallery-slider__card">
                     <?php if ($image) : ?>
                         <img class="gallery-slider__image" src="<?php echo $image; ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" decoding="async" draggable="false">
                     <?php else : ?>
                         <div class="gallery-slider__image gallery-slider__image--placeholder" aria-hidden="true"></div>
-                    <?php endif; ?>
-                    <?php if ($rating) : ?>
-                        <div class="gallery-slider__rating">
-                            <span class="gallery-slider__star" aria-hidden="true">★</span>
-                            <span><?php echo esc_html($rating); ?></span>
-                        </div>
                     <?php endif; ?>
                     <div class="gallery-slider__info">
                         <?php if ($title) : ?>

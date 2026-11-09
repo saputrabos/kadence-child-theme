@@ -32,6 +32,7 @@ function kadence_child_register_hero_block() {
     register_block_type(__DIR__ . '/blocks/gallery-slider');
     register_block_type(__DIR__ . '/blocks/rounded-navigation');
     register_block_type(__DIR__ . '/blocks/header-category');
+    register_block_type(__DIR__ . '/blocks/card-category');
 }
 
 add_filter('block_categories_all', 'kadence_child_add_block_category', 10, 2);
